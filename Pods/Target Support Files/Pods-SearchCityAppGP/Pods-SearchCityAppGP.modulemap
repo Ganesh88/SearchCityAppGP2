@@ -1,0 +1,6 @@
+framework module Pods_SearchCityAppGP {
+  umbrella header "Pods-SearchCityAppGP-umbrella.h"
+
+  export *
+  module * { export * }
+}

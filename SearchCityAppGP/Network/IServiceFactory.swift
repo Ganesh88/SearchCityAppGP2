@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 protocol IServiceFactory {
-    
+    func getEventsSearchService() -> GetEventsSearchService 
 }

@@ -76,6 +76,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    class func getServiceFactory() -> IServiceFactory {
+        return ServiceFactory()
+    }
 
 }
 

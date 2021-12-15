@@ -8,5 +8,7 @@
 import Foundation
 
 class ServiceFactory: IServiceFactory {
-    
+    func getEventsSearchService() -> GetEventsSearchService {
+       return GetEventsSearchServiceCalls()
+   }
 }

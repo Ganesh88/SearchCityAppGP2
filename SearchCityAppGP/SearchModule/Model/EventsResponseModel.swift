@@ -15,11 +15,11 @@ struct EventsResponseModel: Codable {
 struct MetaModel: Codable {
     let total: Int
     let page: Int
-    let per_page: Int
+    let perPage: Int
     
     private enum CodingKeys: String, CodingKey {
         case total
         case page
-        case per_page = "per_page"
+        case perPage = "per_page"
     }
 }

@@ -98,10 +98,7 @@
 		3F2F80F02768EF3B00B4F016 /* SearchModule */ = {
 			isa = PBXGroup;
 			children = (
-				3F2F80FA2768FC7900B4F016 /* Network */,
-				3F2F80F42768EF7300B4F016 /* Models */,
 				3F2F80F32768EF6600B4F016 /* UI */,
-				3F2F80F22768EF5B00B4F016 /* ViewModels */,
 				3F2F80F12768EF4B00B4F016 /* ViewController */,
 			);
 			path = SearchModule;
@@ -115,33 +112,12 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		3F2F80F22768EF5B00B4F016 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		3F2F80F32768EF6600B4F016 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				3F2F80F52768F16700B4F016 /* SearchTableViewCell.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		3F2F80F42768EF7300B4F016 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		3F2F80FA2768FC7900B4F016 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		3FC3D8EE2768B36E0098DE6E = {

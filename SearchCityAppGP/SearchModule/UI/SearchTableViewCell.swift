@@ -18,12 +18,22 @@ class SearchTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        cityImageView.layer.cornerRadius = 15.0
+        cityImageView.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureCell(cityModel: CityModel) {
+        cityTitleLabel.text = cityModel.title
+        cityLocationLabel.text = cityModel.venue.displayLocation
+        if let url = URL(string: cityModel.performers[0].imageUrl) {
+            cityImageView.setImageWith(url)
+        }
     }
 
 }

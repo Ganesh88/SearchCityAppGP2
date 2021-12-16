@@ -13,9 +13,9 @@ struct CityModel: Codable {
     let datetimeUtc: String
     let shortTitle: String
     let title: String
-    let location: [String: String]
-    let url: String
+    let imageUrl: String
     let venue: VenueModel
+    let performers: [PerformersModel]
     
     private enum CodingKeys: String, CodingKey {
         case type
@@ -23,9 +23,9 @@ struct CityModel: Codable {
         case datetimeUtc = "datetime_utc"
         case shortTitle = "short_title"
         case title
-        case location
-        case url
+        case imageUrl = "url"
         case venue
+        case performers
     }
 }
 
@@ -34,5 +34,13 @@ struct VenueModel: Codable {
     
     private enum CodingKeys: String, CodingKey {
         case displayLocation = "display_location"
+    }
+}
+
+struct PerformersModel: Codable {
+    let imageUrl: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case imageUrl = "image"
     }
 }

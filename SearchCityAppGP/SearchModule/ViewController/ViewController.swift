@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         tableView.keyboardDismissMode = .onDrag
         searchBar = UISearchBar()
         searchBar?.delegate = self
-        searchBar?.text = "Texas"
+        searchBar?.text = "Texas + Rangers"
         searchBar?.sizeToFit()
         navigationItem.titleView = searchBar
         searchBar?.showsCancelButton = true
@@ -99,6 +99,7 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         pushDetailsViewController(eventModel: eventsListArray[indexPath.row])
     }
     

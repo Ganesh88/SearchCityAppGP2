@@ -22,4 +22,10 @@ struct MetaModel: Codable {
         case page
         case perPage = "per_page"
     }
+    
+    init() {
+        total = 0
+        page = 1
+        perPage = 25
+    }
 }

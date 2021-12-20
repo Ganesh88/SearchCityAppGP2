@@ -16,6 +16,7 @@
 		3F8427E7276A5CF000DE89A8 /* GetEventsSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427E6276A5CF000DE89A8 /* GetEventsSearchService.swift */; };
 		3F8427EF276A5E5E00DE89A8 /* GetEventsSearchServiceCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427EE276A5E5E00DE89A8 /* GetEventsSearchServiceCalls.swift */; };
 		3F8427F5276A5EE100DE89A8 /* Constatns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427F4276A5EE100DE89A8 /* Constatns.swift */; };
+		3FB29D012770F7850081F2CC /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB29D002770F7850081F2CC /* EventDetailsViewController.swift */; };
 		3FC3D8FB2768B36E0098DE6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3D8FA2768B36E0098DE6E /* AppDelegate.swift */; };
 		3FC3D8FD2768B36E0098DE6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3D8FC2768B36E0098DE6E /* SceneDelegate.swift */; };
 		3FC3D8FF2768B36E0098DE6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3D8FE2768B36E0098DE6E /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		3FC3D90A2768B3990098DE6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC3D9082768B3990098DE6E /* LaunchScreen.storyboard */; };
 		3FC3D9152768B39E0098DE6E /* SearchCityAppGPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3D9142768B39E0098DE6E /* SearchCityAppGPTests.swift */; };
 		3FC3D9202768B39E0098DE6E /* SearchCityAppGPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3D91F2768B39E0098DE6E /* SearchCityAppGPUITests.swift */; };
+		3FC7B880276C8E94001D31A5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7B87F276C8E93001D31A5 /* Utilities.swift */; };
 		7855F4E353E80D56E194C9C8 /* Pods_SearchCityAppGPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E1386525B455CC8A7AD4BD /* Pods_SearchCityAppGPTests.framework */; };
 		E7D2468D38B53F976F732000 /* Pods_SearchCityAppGP_SearchCityAppGPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 176BBAF832B702674200F691 /* Pods_SearchCityAppGP_SearchCityAppGPUITests.framework */; };
 		F3F93F999CCF744F3572F2E1 /* Pods_SearchCityAppGP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D549203B530A36AC71CA76CF /* Pods_SearchCityAppGP.framework */; };
@@ -62,6 +64,7 @@
 		3F8427E6276A5CF000DE89A8 /* GetEventsSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsSearchService.swift; sourceTree = "<group>"; };
 		3F8427EE276A5E5E00DE89A8 /* GetEventsSearchServiceCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsSearchServiceCalls.swift; sourceTree = "<group>"; };
 		3F8427F4276A5EE100DE89A8 /* Constatns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constatns.swift; sourceTree = "<group>"; };
+		3FB29D002770F7850081F2CC /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		3FC3D8F72768B36E0098DE6E /* SearchCityAppGP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchCityAppGP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC3D8FA2768B36E0098DE6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FC3D8FC2768B36E0098DE6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		3FC3D91B2768B39E0098DE6E /* SearchCityAppGPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchCityAppGPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC3D91F2768B39E0098DE6E /* SearchCityAppGPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityAppGPUITests.swift; sourceTree = "<group>"; };
 		3FC3D9212768B39E0098DE6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FC7B87F276C8E93001D31A5 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		462200DD2DC96414B52846D3 /* Pods-SearchCityAppGPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchCityAppGPTests.debug.xcconfig"; path = "Target Support Files/Pods-SearchCityAppGPTests/Pods-SearchCityAppGPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC86F0AD7A3E0AA2BD8F74AE /* Pods-SearchCityAppGP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchCityAppGP.release.xcconfig"; path = "Target Support Files/Pods-SearchCityAppGP/Pods-SearchCityAppGP.release.xcconfig"; sourceTree = "<group>"; };
 		D549203B530A36AC71CA76CF /* Pods_SearchCityAppGP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchCityAppGP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				3FC3D8FE2768B36E0098DE6E /* ViewController.swift */,
+				3FB29D002770F7850081F2CC /* EventDetailsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				3F8427F4276A5EE100DE89A8 /* Constatns.swift */,
+				3FC7B87F276C8E93001D31A5 /* Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -494,9 +500,11 @@
 			files = (
 				3F8427C52769F9C200DE89A8 /* IServiceFactory.swift in Sources */,
 				3FC3D8FF2768B36E0098DE6E /* ViewController.swift in Sources */,
+				3FC7B880276C8E94001D31A5 /* Utilities.swift in Sources */,
 				3FC3D8FB2768B36E0098DE6E /* AppDelegate.swift in Sources */,
 				3F8427F5276A5EE100DE89A8 /* Constatns.swift in Sources */,
 				3FC3D8FD2768B36E0098DE6E /* SceneDelegate.swift in Sources */,
+				3FB29D012770F7850081F2CC /* EventDetailsViewController.swift in Sources */,
 				3F8427D1276A07F600DE89A8 /* CityModel.swift in Sources */,
 				3F8427EF276A5E5E00DE89A8 /* GetEventsSearchServiceCalls.swift in Sources */,
 				3F8427CA2769FAE900DE89A8 /* ServiceFactory.swift in Sources */,

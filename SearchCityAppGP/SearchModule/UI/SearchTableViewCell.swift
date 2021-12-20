@@ -18,7 +18,7 @@ class SearchTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        cityImageView.layer.cornerRadius = 15.0
+        cityImageView.layer.cornerRadius = 20.0
         cityImageView.clipsToBounds = true
     }
 
@@ -34,6 +34,7 @@ class SearchTableViewCell: UITableViewCell {
         if let url = URL(string: cityModel.performers[0].imageUrl) {
             cityImageView.setImageWith(url)
         }
+        dateLable.text = Utilities.formattedDateFromString(dateString: cityModel.datetimeUtc)
     }
 
 }

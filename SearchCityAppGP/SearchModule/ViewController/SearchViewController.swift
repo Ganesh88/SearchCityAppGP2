@@ -8,13 +8,14 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import MBProgressHUD
 
-class ViewController: UIViewController {
+class SearchViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var searchBar: UISearchBar?
     
-    var eventsListArray = [CityModel]()
+    var eventsListArray = [EventsModel]()
     
     var searchViewModel: SearchViewModel? {
         didSet {
@@ -35,7 +36,7 @@ class ViewController: UIViewController {
         tableView.keyboardDismissMode = .onDrag
         searchBar = UISearchBar()
         searchBar?.delegate = self
-        searchBar?.text = "Texas + Rangers"
+        searchBar?.text = "London"
         searchBar?.sizeToFit()
         navigationItem.titleView = searchBar
         searchBar?.showsCancelButton = true
@@ -67,6 +68,7 @@ class ViewController: UIViewController {
         searchViewModel.eventsListArray.subscribe(onNext: { (eventsListArray) in
             self.eventsListArray = eventsListArray
             self.tableView.reloadData()
+            self.hideHUD()
           }).disposed(by: disposeBag)
        
         searchBar?.rx.text.orEmpty
@@ -74,7 +76,8 @@ class ViewController: UIViewController {
                     .distinctUntilChanged()
                     .filter { !$0.isEmpty }
                     .subscribe(onNext: { [unowned self] query in
-                            self.searchViewModel?.getEventsForSearchQuery(searchString: query)
+                        self.showHud()
+                        self.searchViewModel?.getEventsForSearchQuery(searchString: query)
                     }).disposed(by: disposeBag)
         
         searchBar?.rx.cancelButtonClicked
@@ -86,7 +89,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController : UITableViewDataSource, UITableViewDelegate {
+extension SearchViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventsListArray.count
@@ -94,7 +97,7 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as? SearchTableViewCell
-        cell?.configureCell(cityModel: eventsListArray[indexPath.row])
+        cell?.configureCell(eventsModel: eventsListArray[indexPath.row])
         return cell!
     }
     
@@ -103,7 +106,7 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
         pushDetailsViewController(eventModel: eventsListArray[indexPath.row])
     }
     
-    func pushDetailsViewController(eventModel: CityModel) {
+    func pushDetailsViewController(eventModel: EventsModel) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let detailsViewController = storyboard.instantiateViewController(withIdentifier: "EventDetailsViewController") as? EventDetailsViewController {
             detailsViewController.eventModel = eventModel
@@ -113,7 +116,7 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
 }
 
 
-extension ViewController: UISearchBarDelegate {
+extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }

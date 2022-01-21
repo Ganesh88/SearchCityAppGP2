@@ -8,7 +8,7 @@
 import Foundation
 
 struct EventsResponseModel: Codable {
-    let events: [CityModel]
+    let events: [EventsModel]
     let meta: MetaModel
 }
 

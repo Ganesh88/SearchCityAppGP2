@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CityModel: Codable {
+struct EventsModel: Codable {
     let type: String
     let id: Int
     let datetimeUtc: String

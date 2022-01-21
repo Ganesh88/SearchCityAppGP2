@@ -10,7 +10,7 @@
 		3F2F80F62768F16700B4F016 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2F80F52768F16700B4F016 /* SearchTableViewCell.swift */; };
 		3F8427C52769F9C200DE89A8 /* IServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427C42769F9C200DE89A8 /* IServiceFactory.swift */; };
 		3F8427CA2769FAE900DE89A8 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427C92769FAE900DE89A8 /* ServiceFactory.swift */; };
-		3F8427D1276A07F600DE89A8 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427D0276A07F600DE89A8 /* CityModel.swift */; };
+		3F8427D1276A07F600DE89A8 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427D0276A07F600DE89A8 /* EventsModel.swift */; };
 		3F8427D9276A1A4300DE89A8 /* EventsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427D8276A1A4300DE89A8 /* EventsResponseModel.swift */; };
 		3F8427DF276A421700DE89A8 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427DE276A421700DE89A8 /* SearchViewModel.swift */; };
 		3F8427E7276A5CF000DE89A8 /* GetEventsSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427E6276A5CF000DE89A8 /* GetEventsSearchService.swift */; };
@@ -20,11 +20,11 @@
 		3FB29D06277108970081F2CC /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB29D05277108970081F2CC /* SearchViewModelTests.swift */; };
 		3FB29D0A277109500081F2CC /* EventsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427D8276A1A4300DE89A8 /* EventsResponseModel.swift */; };
 		3FB29D0E2771095A0081F2CC /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427DE276A421700DE89A8 /* SearchViewModel.swift */; };
-		3FB29D122771095F0081F2CC /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427D0276A07F600DE89A8 /* CityModel.swift */; };
+		3FB29D122771095F0081F2CC /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427D0276A07F600DE89A8 /* EventsModel.swift */; };
 		3FB29D16277109BA0081F2CC /* GetEventsSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427E6276A5CF000DE89A8 /* GetEventsSearchService.swift */; };
 		3FC3D8FB2768B36E0098DE6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3D8FA2768B36E0098DE6E /* AppDelegate.swift */; };
 		3FC3D8FD2768B36E0098DE6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3D8FC2768B36E0098DE6E /* SceneDelegate.swift */; };
-		3FC3D8FF2768B36E0098DE6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3D8FE2768B36E0098DE6E /* ViewController.swift */; };
+		3FC3D8FF2768B36E0098DE6E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3D8FE2768B36E0098DE6E /* SearchViewController.swift */; };
 		3FC3D9022768B36E0098DE6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FC3D9002768B36E0098DE6E /* Main.storyboard */; };
 		3FC3D9052768B36E0098DE6E /* SearchCityAppGP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3D9032768B36E0098DE6E /* SearchCityAppGP.xcdatamodeld */; };
 		3FC3D9072768B3990098DE6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FC3D9062768B3990098DE6E /* Assets.xcassets */; };
@@ -63,7 +63,7 @@
 		3F2F80F52768F16700B4F016 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		3F8427C42769F9C200DE89A8 /* IServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IServiceFactory.swift; sourceTree = "<group>"; };
 		3F8427C92769FAE900DE89A8 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
-		3F8427D0276A07F600DE89A8 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		3F8427D0276A07F600DE89A8 /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 		3F8427D8276A1A4300DE89A8 /* EventsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsResponseModel.swift; sourceTree = "<group>"; };
 		3F8427DE276A421700DE89A8 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		3F8427E6276A5CF000DE89A8 /* GetEventsSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsSearchService.swift; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		3FC3D8F72768B36E0098DE6E /* SearchCityAppGP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchCityAppGP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC3D8FA2768B36E0098DE6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FC3D8FC2768B36E0098DE6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3FC3D8FE2768B36E0098DE6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FC3D8FE2768B36E0098DE6E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3FC3D9012768B36E0098DE6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FC3D9042768B36E0098DE6E /* SearchCityAppGP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SearchCityAppGP.xcdatamodel; sourceTree = "<group>"; };
 		3FC3D9062768B3990098DE6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		3F2F80F12768EF4B00B4F016 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3FC3D8FE2768B36E0098DE6E /* ViewController.swift */,
+				3FC3D8FE2768B36E0098DE6E /* SearchViewController.swift */,
 				3FB29D002770F7850081F2CC /* EventDetailsViewController.swift */,
 			);
 			path = ViewController;
@@ -163,7 +163,7 @@
 		3F8427CF2769FCA900DE89A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3F8427D0276A07F600DE89A8 /* CityModel.swift */,
+				3F8427D0276A07F600DE89A8 /* EventsModel.swift */,
 				3F8427D8276A1A4300DE89A8 /* EventsResponseModel.swift */,
 			);
 			path = Model;
@@ -506,13 +506,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F8427C52769F9C200DE89A8 /* IServiceFactory.swift in Sources */,
-				3FC3D8FF2768B36E0098DE6E /* ViewController.swift in Sources */,
+				3FC3D8FF2768B36E0098DE6E /* SearchViewController.swift in Sources */,
 				3FC7B880276C8E94001D31A5 /* Utilities.swift in Sources */,
 				3FC3D8FB2768B36E0098DE6E /* AppDelegate.swift in Sources */,
 				3F8427F5276A5EE100DE89A8 /* Constatns.swift in Sources */,
 				3FC3D8FD2768B36E0098DE6E /* SceneDelegate.swift in Sources */,
 				3FB29D012770F7850081F2CC /* EventDetailsViewController.swift in Sources */,
-				3F8427D1276A07F600DE89A8 /* CityModel.swift in Sources */,
+				3F8427D1276A07F600DE89A8 /* EventsModel.swift in Sources */,
 				3F8427EF276A5E5E00DE89A8 /* GetEventsSearchServiceCalls.swift in Sources */,
 				3F8427CA2769FAE900DE89A8 /* ServiceFactory.swift in Sources */,
 				3F8427DF276A421700DE89A8 /* SearchViewModel.swift in Sources */,
@@ -527,7 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FB29D122771095F0081F2CC /* CityModel.swift in Sources */,
+				3FB29D122771095F0081F2CC /* EventsModel.swift in Sources */,
 				3FB29D16277109BA0081F2CC /* GetEventsSearchService.swift in Sources */,
 				3FB29D0A277109500081F2CC /* EventsResponseModel.swift in Sources */,
 				3FB29D06277108970081F2CC /* SearchViewModelTests.swift in Sources */,

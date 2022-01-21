@@ -28,13 +28,13 @@ class SearchTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(cityModel: CityModel) {
-        cityTitleLabel.text = cityModel.title
-        cityLocationLabel.text = cityModel.venue.displayLocation
-        if let url = URL(string: cityModel.performers[0].imageUrl) {
+    func configureCell(eventsModel: EventsModel) {
+        cityTitleLabel.text = eventsModel.title
+        cityLocationLabel.text = eventsModel.venue.displayLocation
+        if let url = URL(string: eventsModel.performers[0].imageUrl) {
             cityImageView.setImageWith(url)
         }
-        dateLable.text = Utilities.formattedDateFromString(dateString: cityModel.datetimeUtc)
+        dateLable.text = Utilities.instance.formattedDateFromString(dateString: eventsModel.datetimeUtc)
     }
 
 }

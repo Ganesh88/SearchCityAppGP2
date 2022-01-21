@@ -14,7 +14,7 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var dateLable: UILabel!
     @IBOutlet weak var displayLoction: UILabel!
     
-    var eventModel: CityModel?
+    var eventModel: EventsModel?
     var barColor: UIColor?
         
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class EventDetailsViewController: UIViewController {
         if let url = URL(string: eventModel.performers[0].imageUrl) {
             imageView.setImageWith(url)
         }
-        dateLable.text = Utilities.formattedDateFromString(dateString: eventModel.datetimeUtc)
+        dateLable.text = Utilities.instance.formattedDateFromString(dateString: eventModel.datetimeUtc)
     }
     
     override func viewWillAppear(_ animated: Bool) {

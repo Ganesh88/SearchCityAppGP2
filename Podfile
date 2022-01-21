@@ -11,6 +11,7 @@ target 'SearchCityAppGP' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'SDWebImage', '~> 5.0'
+  pod 'MBProgressHUD', '~> 1.2.0'
 
   target 'SearchCityAppGPTests' do
     inherit! :search_paths

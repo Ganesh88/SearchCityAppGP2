@@ -11,7 +11,7 @@ import RxRelay
 
 class SearchViewModel {
     var searchEventsService: GetEventsSearchService?
-    var eventsListArray = BehaviorRelay<[CityModel]>(value: [])
+    var eventsListArray = BehaviorRelay<[EventsModel]>(value: [])
     var searchText = BehaviorRelay(value: "")
     
     init(searchEventsService: GetEventsSearchService) {

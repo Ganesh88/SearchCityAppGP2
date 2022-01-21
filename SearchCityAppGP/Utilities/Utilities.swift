@@ -7,10 +7,25 @@
 
 import Foundation
 import UIKit
+import MBProgressHUD
 
 class Utilities {
+    weak var appDelegate: AppDelegate!    
+    // MARK: - Singleton
+    class var instance: Utilities {
+        struct Static {
+            static let instance: Utilities = Utilities()
+        }
+        return Static.instance
+    }
     
-    class func formattedDateFromString(dateString: String) -> String? {
+    // MARK: - Initialise
+    func initialise() {
+        
+        self.appDelegate = UIApplication.shared.delegate as? AppDelegate
+    }
+    
+    func formattedDateFromString(dateString: String) -> String? {
         
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
@@ -34,6 +49,18 @@ extension UIColor {
             self.setFill()
             rendererContext.fill(CGRect(origin: .zero, size: size))
         }
+    }
+}
+
+extension UIViewController {
+    func showHud() {
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.label.text = kLoading
+        hud.isUserInteractionEnabled = false
+    }
+
+    func hideHUD() {
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
 }
 

@@ -297,6 +297,7 @@
 				3FC3D90C2768B39E0098DE6E /* Sources */,
 				3FC3D90D2768B39E0098DE6E /* Frameworks */,
 				3FC3D90E2768B39E0098DE6E /* Resources */,
+				F388B8B67BE42FAD48EDEBA2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -496,6 +497,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SearchCityAppGP-SearchCityAppGPUITests/Pods-SearchCityAppGP-SearchCityAppGPUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F388B8B67BE42FAD48EDEBA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SearchCityAppGPTests/Pods-SearchCityAppGPTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SearchCityAppGPTests/Pods-SearchCityAppGPTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SearchCityAppGPTests/Pods-SearchCityAppGPTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

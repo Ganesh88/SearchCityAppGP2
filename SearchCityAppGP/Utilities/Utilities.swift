@@ -41,6 +41,16 @@ class Utilities {
         return nil
     }
     
+    func showAlert(view: UIViewController, title: String, message: String) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: { action in
+            })
+            alert.addAction(defaultAction)
+            DispatchQueue.main.async(execute: {
+                view.present(alert, animated: true)
+            })
+        }
+    
 }
 
 extension UIColor {

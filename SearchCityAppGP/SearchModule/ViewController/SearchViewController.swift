@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var searchBar: UISearchBar?
     
+    @IBOutlet weak var noResultsLabel: UILabel!
     var eventsListArray = [EventsModel]()
     
     var searchViewModel: SearchViewModel? {
@@ -25,9 +26,13 @@ class SearchViewController: UIViewController {
     
     var disposeBag = DisposeBag()
     
+    var areEventsLoading = false
+    var currentPageCount = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        tableView.tableFooterView = UIView()
         setUpSearchBar()
         searchViewModel = SearchViewModel(searchEventsService: AppDelegate.getServiceFactory().getEventsSearchService())
     }
@@ -36,7 +41,8 @@ class SearchViewController: UIViewController {
         tableView.keyboardDismissMode = .onDrag
         searchBar = UISearchBar()
         searchBar?.delegate = self
-        searchBar?.text = "London"
+        searchBar?.text = kSearchBarDefaultText
+        searchBar?.placeholder = kSearchBarPlaceholderText
         searchBar?.sizeToFit()
         navigationItem.titleView = searchBar
         searchBar?.showsCancelButton = true
@@ -49,7 +55,7 @@ class SearchViewController: UIViewController {
             if let backgroundview = textfield.subviews.first {
 
                 // Background color
-                backgroundview.backgroundColor = UIColor(red: 39, green: 70, blue: 86, alpha: 1)
+                backgroundview.backgroundColor = kSearchBarTextFieldBGColor
 
                 // Rounded corner
                 backgroundview.layer.cornerRadius = 10;
@@ -62,22 +68,38 @@ class SearchViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+   
+    // MARK: - View Model Bindings Methods
+
     func viewModelBindings(searchViewModel: SearchViewModel) {
         
         searchViewModel.eventsListArray.subscribe(onNext: { (eventsListArray) in
-            self.eventsListArray = eventsListArray
+            if eventsListArray.isEmpty {
+                /*Utilities.instance.showAlert(view: self,
+                                         title: "",
+                                         message: kNoResultFoundText)*/
+                self.noResultsLabel.isHidden = false
+                self.eventsListArray = eventsListArray
+            } else {
+                self.eventsListArray += eventsListArray
+                self.noResultsLabel.isHidden = true
+            }
             self.tableView.reloadData()
+            self.areEventsLoading = false
             self.hideHUD()
           }).disposed(by: disposeBag)
        
         searchBar?.rx.text.orEmpty
                     .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
                     .distinctUntilChanged()
-                    .filter { !$0.isEmpty }
                     .subscribe(onNext: { [unowned self] query in
+                        if query.isEmpty {
+                            self.clearTableView()
+                        }
                         self.showHud()
-                        self.searchViewModel?.getEventsForSearchQuery(searchString: query)
+                        self.areEventsLoading = true
+                        self.searchViewModel?.getEventsForSearchQuery(searchString: query,
+                                                                      pageCount: 1)
                     }).disposed(by: disposeBag)
         
         searchBar?.rx.cancelButtonClicked
@@ -86,8 +108,21 @@ class SearchViewController: UIViewController {
             })
             .disposed(by: self.disposeBag)
     }
+    
+    func loadMoreEvents() {
+        if !areEventsLoading && currentPageCount != kTotalEventsPageCount {
+            areEventsLoading = true
+            searchViewModel?.getEventsForSearchQuery(searchString: searchBar?.text ?? "",
+                                                pageCount: currentPageCount)
+            currentPageCount += 1
+        }
+    }
+    
+    
 
 }
+
+// MARK: - UITableView Methods
 
 extension SearchViewController : UITableViewDataSource, UITableViewDelegate {
     
@@ -112,6 +147,30 @@ extension SearchViewController : UITableViewDataSource, UITableViewDelegate {
             detailsViewController.eventModel = eventModel
             self.navigationController?.pushViewController(detailsViewController, animated: true)
         }
+    }
+    
+    func clearTableView() {
+        self.noResultsLabel.isHidden = false
+        eventsListArray = [EventsModel]()
+        tableView.reloadData()
+    }
+}
+
+// MARK: - UIScrollView Methods
+
+extension SearchViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
+        perform(#selector(UIScrollViewDelegate.scrollViewDidEndScrollingAnimation), with: nil, afterDelay: 0.3)
+        if (scrollView.contentOffset.y + 100) >= (scrollView.contentSize.height - scrollView.frame.size.height) {
+            // You have reeached bottom (well not really, but you have reached 100px less)
+            // Increase Page Count
+           loadMoreEvents()
+        }
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
     }
 }
 

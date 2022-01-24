@@ -18,10 +18,22 @@ class SearchViewModel {
         self.searchEventsService = searchEventsService
     }
     
-    func getEventsForSearchQuery(searchString: String) {
+    func isValidSearchString(searchString: String) -> Bool {
+        if !searchString.isEmpty && searchString.count > 2 {
+            return true
+        }
+        return false
+    }
+    
+    func getEventsForSearchQuery(searchString: String,
+                                 pageCount: Int) {
+        if !(isValidSearchString(searchString: searchString)) { self.eventsListArray.accept( [] )
+            return
+        }
         searchEventsService?.getEventsList(searchString: searchString,
-                                           page: 1,
+                                           page: pageCount,
                                            callback: { (eventsResponseModel, error) in
+                                            kTotalEventsPageCount = eventsResponseModel?.meta.totalPages ?? 0
                                             self.eventsListArray.accept(eventsResponseModel?.events ?? [])
                                            })
     }

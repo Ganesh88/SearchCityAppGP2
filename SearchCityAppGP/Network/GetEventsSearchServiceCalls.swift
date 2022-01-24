@@ -14,7 +14,10 @@ class GetEventsSearchServiceCalls: GetEventsSearchService {
                        page: Int,
                        callback: @escaping ((EventsResponseModel?, Error?) -> Void)) -> Void {
         let manager = AFHTTPSessionManager()
-        let url = (String(format:kSearchURL,kSeatGeekAPIClientID, searchString))
+        let url = (String(format:kSearchURL,
+                          kSeatGeekAPIClientID,
+                          searchString,
+                          page))
         let urlString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? url
 
     

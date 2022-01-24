@@ -16,6 +16,10 @@ target 'SearchCityAppGP' do
   target 'SearchCityAppGPTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RxBlocking', '~> 5'
+    pod 'RxTest', '~> 5'
+    pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'SearchCityAppGPUITests' do

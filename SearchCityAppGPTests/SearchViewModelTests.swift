@@ -49,5 +49,23 @@ class SearchViewModelTests: XCTestCase {
         searchViewModel?.getEventsForSearchQuery(searchString: "test")
         XCTAssertTrue(true)
     }
-
+    
+    func testisValidSearchStringForSuccess() {
+        let status = searchViewModel?.isValidSearchString(searchString: "test")
+        if let status = status {
+            XCTAssertTrue(status)
+        } else {
+            XCTAssertTrue(false)
+        }
+        
+    }
+    
+    func testisValidSearchStringForFailure() {
+        let status = searchViewModel?.isValidSearchString(searchString: "")
+        if let status = status {
+            XCTAssertFalse(status)
+        } else {
+            XCTAssertTrue(false)
+        }
+    }
 }

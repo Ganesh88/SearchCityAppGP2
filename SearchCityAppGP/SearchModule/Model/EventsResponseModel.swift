@@ -24,8 +24,14 @@ struct MetaModel: Codable {
     }
     
     init() {
-        total = 0
+        total = 100
         page = 1
         perPage = 25
+    }
+    
+    var totalPages : Int {
+        get {
+            return (total + perPage - 1) / perPage
+        }
     }
 }

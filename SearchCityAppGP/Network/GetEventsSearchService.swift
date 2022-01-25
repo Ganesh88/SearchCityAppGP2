@@ -6,9 +6,13 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol GetEventsSearchService {
-    func getEventsList(searchString: String,
+    /*func getEventsList(searchString: String,
                        page: Int,
-                       callback: @escaping ((EventsResponseModel?, Error?) -> Void)) -> Void
+                       callback: @escaping ((EventsResponseModel?, Error?) -> Void)) -> Void*/
+    
+    func getEventsList(searchString: String,
+                       page: Int) -> Promise <EventsResponseModel>
 }

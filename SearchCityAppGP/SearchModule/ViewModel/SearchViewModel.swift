@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxRelay
+import PromiseKit
 
 class SearchViewModel {
     var searchEventsService: GetEventsSearchService?
@@ -25,7 +26,9 @@ class SearchViewModel {
         return false
     }
     
-    func getEventsForSearchQuery(searchString: String,
+    // One without promise kit
+    
+    /*func getEventsForSearchQuery(searchString: String,
                                  pageCount: Int) {
         if !(isValidSearchString(searchString: searchString)) { self.eventsListArray.accept( [] )
             return
@@ -36,5 +39,37 @@ class SearchViewModel {
                                             kTotalEventsPageCount = eventsResponseModel?.meta.totalPages ?? 0
                                             self.eventsListArray.accept(eventsResponseModel?.events ?? [])
                                            })
+    }*/
+    
+    // One with promise kit
+
+    func getEventsForSearchQuery(searchString: String,
+                                 pageCount: Int) {
+        if !(isValidSearchString(searchString: searchString)) { self.eventsListArray.accept( [] )
+            return
+        }
+        firstly {
+            Utilities.instance.checkConnectivity()
+        }.then {
+            isConnected -> Promise <EventsResponseModel> in
+            if !isConnected {
+                throw AppError.networkError
+            } else {
+                let eventsResponseModel = self.searchEventsService?.getEventsList(searchString: searchString, page: pageCount)
+                if let eventsResponseModel = eventsResponseModel {
+                    return eventsResponseModel
+                } else {
+                    throw AppError.defaultError
+                }
+            }
+        }.done {
+            eventsResponseModel -> Void in
+            kTotalEventsPageCount = eventsResponseModel.meta.totalPages
+            self.eventsListArray.accept(eventsResponseModel.events)
+        }.catch {
+            error in
+            print( error.localizedDescription)
+            Utilities.instance.showAlert(title:"", message: error.localizedDescription)
+        }.finally {}
     }
 }

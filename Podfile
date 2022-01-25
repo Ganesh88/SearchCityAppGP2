@@ -12,14 +12,13 @@ target 'SearchCityAppGP' do
   pod 'RxCocoa', '~> 5'
   pod 'SDWebImage', '~> 5.0'
   pod 'MBProgressHUD', '~> 1.2.0'
+  pod 'PromiseKit', '~> 6.8'
 
   target 'SearchCityAppGPTests' do
     inherit! :search_paths
     # Pods for testing
     pod 'RxBlocking', '~> 5'
     pod 'RxTest', '~> 5'
-    pod 'Quick'
-    pod 'Nimble'
   end
 
   target 'SearchCityAppGPUITests' do

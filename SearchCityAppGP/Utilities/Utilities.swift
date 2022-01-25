@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import MBProgressHUD
+import AFNetworking
+import PromiseKit
 
 class Utilities {
     weak var appDelegate: AppDelegate!    
@@ -29,7 +31,7 @@ class Utilities {
         
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-                
+        
         if let date = inputFormatter.date(from: dateString) {
             
             let outputFormatter = DateFormatter()
@@ -41,16 +43,40 @@ class Utilities {
         return nil
     }
     
-    func showAlert(view: UIViewController, title: String, message: String) {
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: { action in
-            })
-            alert.addAction(defaultAction)
-            DispatchQueue.main.async(execute: {
-                view.present(alert, animated: true)
-            })
+    func showAlert(title: String,
+                   message: String) {
+        let alert = UIAlertController(title: title,
+                                      message:message,
+                                      preferredStyle: .alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "Ok",
+                                      style: .cancel,
+                                      handler: nil))
+        
+        if let window = UIApplication.shared.windows.first {
+            // show the alert
+            window.rootViewController?.present(alert, animated: true, completion: nil)
         }
+        
+    }
     
+    func checkConnectivity() -> Promise<Bool> {
+        return Promise { seal  in
+            let reachability = AFNetworkReachabilityManager.shared()
+                reachability.startMonitoring();
+                reachability.setReachabilityStatusChange({ (status) -> Void in
+                    switch(status) {
+                    case .unknown,.notReachable:
+                        seal.fulfill(false)
+                    case .reachableViaWWAN,.reachableViaWiFi:
+                        seal.fulfill(true)
+                    @unknown default:
+                        seal.fulfill(false)
+                    }
+                })
+        }
+    }
 }
 
 extension UIColor {
@@ -68,9 +94,28 @@ extension UIViewController {
         hud.label.text = kLoading
         hud.isUserInteractionEnabled = false
     }
-
+    
     func hideHUD() {
         MBProgressHUD.hide(for: self.view, animated: true)
     }
 }
+
+//Error Enum
+enum AppError : Error {
+    case defaultError
+    case networkError
+}
+
+extension AppError : LocalizedError {
+    public var errorDescription: String? {
+        switch self{
+        case .defaultError:
+            return kUnknownError
+        case .networkError:
+            return kNetworkError
+        
+        }
+    }
+}
+
 

@@ -16,3 +16,5 @@ let kSearchBarTextFieldBGColor = UIColor(red: 39, green: 70, blue: 86, alpha: 1)
 let kNoResultFoundText = "No results found"
 let kSearchBarDefaultText = "London"
 let kSearchBarPlaceholderText = "Search for events here"
+let kNetworkError = "Network error"
+let kUnknownError = "Unknown error"

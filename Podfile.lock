@@ -15,8 +15,15 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - MBProgressHUD (1.2.0)
-  - Nimble (9.2.1)
-  - Quick (4.0.0)
+  - PromiseKit (6.15.3):
+    - PromiseKit/CorePromise (= 6.15.3)
+    - PromiseKit/Foundation (= 6.15.3)
+    - PromiseKit/UIKit (= 6.15.3)
+  - PromiseKit/CorePromise (6.15.3)
+  - PromiseKit/Foundation (6.15.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.15.3):
+    - PromiseKit/CorePromise
   - RxBlocking (5.1.3):
     - RxSwift (~> 5)
   - RxCocoa (5.1.3):
@@ -34,8 +41,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 4.0)
   - MBProgressHUD (~> 1.2.0)
-  - Nimble
-  - Quick
+  - PromiseKit (~> 6.8)
   - RxBlocking (~> 5)
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
@@ -46,8 +52,7 @@ SPEC REPOS:
   trunk:
     - AFNetworking
     - MBProgressHUD
-    - Nimble
-    - Quick
+    - PromiseKit
     - RxBlocking
     - RxCocoa
     - RxRelay
@@ -58,8 +63,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
-  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+  PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
   RxBlocking: 5aed110d3996c0a4b07340810b9ba230fa70df5c
   RxCocoa: e2ed092d5432e4296aa818021d27de4090ac0354
   RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
@@ -67,6 +71,6 @@ SPEC CHECKSUMS:
   RxTest: 937ba521d3f6dca7db49f76cd5d372cfce6091cb
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
 
-PODFILE CHECKSUM: 5d01e74d9d474a7a8971f8846777f67329d9dcfd
+PODFILE CHECKSUM: 143e54487ff1ad44f6697cf6f3055f01dffd762a
 
 COCOAPODS: 1.11.2

@@ -75,9 +75,6 @@ class SearchViewController: UIViewController {
         
         searchViewModel.eventsListArray.subscribe(onNext: { (eventsListArray) in
             if eventsListArray.isEmpty {
-                /*Utilities.instance.showAlert(view: self,
-                                         title: "",
-                                         message: kNoResultFoundText)*/
                 self.noResultsLabel.isHidden = false
                 self.eventsListArray = eventsListArray
             } else {
@@ -113,13 +110,10 @@ class SearchViewController: UIViewController {
         if !areEventsLoading && currentPageCount != kTotalEventsPageCount {
             areEventsLoading = true
             searchViewModel?.getEventsForSearchQuery(searchString: searchBar?.text ?? "",
-                                                pageCount: currentPageCount)
+                                                     pageCount: currentPageCount)
             currentPageCount += 1
         }
     }
-    
-    
-
 }
 
 // MARK: - UITableView Methods

@@ -56,7 +56,9 @@ class Utilities {
         
         if let window = UIApplication.shared.windows.first {
             // show the alert
-            window.rootViewController?.present(alert, animated: true, completion: nil)
+            window.rootViewController?.present(alert,
+                                               animated: true,
+                                               completion: nil)
         }
         
     }

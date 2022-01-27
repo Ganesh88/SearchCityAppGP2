@@ -6,13 +6,22 @@
 //
 
 import XCTest
+import PromiseKit
 
 class EventsSearchServiceMock: GetEventsSearchService {
-    func getEventsList(searchString: String,
+    func getEventsList(searchString: String, page: Int) -> Promise<EventsResponseModel> {
+        return Promise {
+            seal in
+            
+            seal.fulfill(EventsResponseModel(events: [], meta: MetaModel()))
+        }
+    }
+    
+    /*func getEventsList(searchString: String,
                        page: Int,
                        callback: @escaping ((EventsResponseModel?, Error?) -> Void)) -> Void {
         callback(EventsResponseModel(events: [], meta: MetaModel()), nil)
-    }
+    }*/
 }
 
 class SearchViewModelTests: XCTestCase {
@@ -46,7 +55,8 @@ class SearchViewModelTests: XCTestCase {
     }
     
     func testGetEventsForSearchQuery() {
-        searchViewModel?.getEventsForSearchQuery(searchString: "test")
+        searchViewModel?.getEventsForSearchQuery(searchString: "test",
+                                                 pageCount: 1)
         XCTAssertTrue(true)
     }
     

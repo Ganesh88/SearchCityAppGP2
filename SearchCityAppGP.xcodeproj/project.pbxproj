@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3F2F80F62768F16700B4F016 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2F80F52768F16700B4F016 /* SearchTableViewCell.swift */; };
+		3F3A1E5527A26A8400F3A4CC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7B87F276C8E93001D31A5 /* Utilities.swift */; };
+		3F3A1E5D27A26B2600F3A4CC /* Constatns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427F4276A5EE100DE89A8 /* Constatns.swift */; };
+		3F3A1E6127A26B2D00F3A4CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3D8FA2768B36E0098DE6E /* AppDelegate.swift */; };
+		3F3A1E6527A26C0E00F3A4CC /* IServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427C42769F9C200DE89A8 /* IServiceFactory.swift */; };
+		3F3A1E6927A26C7C00F3A4CC /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427C92769FAE900DE89A8 /* ServiceFactory.swift */; };
+		3F3A1E6D27A26CAB00F3A4CC /* GetEventsSearchServiceCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427EE276A5E5E00DE89A8 /* GetEventsSearchServiceCalls.swift */; };
 		3F8427C52769F9C200DE89A8 /* IServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427C42769F9C200DE89A8 /* IServiceFactory.swift */; };
 		3F8427CA2769FAE900DE89A8 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427C92769FAE900DE89A8 /* ServiceFactory.swift */; };
 		3F8427D1276A07F600DE89A8 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8427D0276A07F600DE89A8 /* EventsModel.swift */; };
@@ -547,10 +553,16 @@
 			files = (
 				3FB29D122771095F0081F2CC /* EventsModel.swift in Sources */,
 				3FB29D16277109BA0081F2CC /* GetEventsSearchService.swift in Sources */,
+				3F3A1E6527A26C0E00F3A4CC /* IServiceFactory.swift in Sources */,
+				3F3A1E5527A26A8400F3A4CC /* Utilities.swift in Sources */,
+				3F3A1E6927A26C7C00F3A4CC /* ServiceFactory.swift in Sources */,
+				3F3A1E6D27A26CAB00F3A4CC /* GetEventsSearchServiceCalls.swift in Sources */,
+				3F3A1E6127A26B2D00F3A4CC /* AppDelegate.swift in Sources */,
 				3FB29D0A277109500081F2CC /* EventsResponseModel.swift in Sources */,
 				3FB29D06277108970081F2CC /* SearchViewModelTests.swift in Sources */,
 				3FB29D0E2771095A0081F2CC /* SearchViewModel.swift in Sources */,
 				3FC3D9152768B39E0098DE6E /* SearchCityAppGPTests.swift in Sources */,
+				3F3A1E5D27A26B2600F3A4CC /* Constatns.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
